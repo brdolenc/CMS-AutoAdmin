@@ -1,6 +1,6 @@
 # CMS - AutoAdmin
 
-Criado com a função de facilitar a desenvolvimento de administradores de conteúdo para Web Site, o CMS é totalmente direcionado para a parte da administração do conteúdo no banco de dados, deixando livre a criação do web site. 
+Criado com a função de facilitar a desenvolvimento de administradores de conteúdos para Web Sites, o CMS é totalmente direcionado para a parte da administração do banco de dados, deixando livre a criação do web site. 
 
 
 ### Instalando o sistema
