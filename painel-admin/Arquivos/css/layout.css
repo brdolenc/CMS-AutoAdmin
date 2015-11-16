@@ -1,0 +1,663 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato/lato-reg-webfont.eot');
+    src: url('../fonts/lato/lato-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato/lato-reg-webfont.woff') format('woff'),
+         url('../fonts/lato/lato-reg-webfont.ttf') format('truetype'),
+         url('../fonts/lato/lato-reg-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'latolight';
+    src: url('../fonts/lato/lato-lig-webfont.eot');
+    src: url('../fonts/lato/lato-lig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato/lato-lig-webfont.woff') format('woff'),
+         url('../fonts/lato/lato-lig-webfont.ttf') format('truetype'),
+         url('../fonts/lato/lato-lig-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'latobold';
+    src: url('../fonts/lato/lato-bol-webfont.eot');
+    src: url('../fonts/lato/lato-bol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato/lato-bol-webfont.woff') format('woff'),
+         url('../fonts/lato/lato-bol-webfont.ttf') format('truetype'),
+         url('../fonts/lato/lato-bol-webfont.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+body {
+	background:url('../imagens/bg.png') #FFF;
+	font-family:"latolight";
+	font-size:14px;
+	letter-spacing:0px;
+}
+
+a:link {
+	color: #7aa1a6;
+	text-decoration: none;
+}
+a:visited {
+	color: #7aa1a6;
+	text-decoration: none;
+}
+a:hover {
+	color: #55767a;
+	text-decoration: underline;
+}
+a:active {
+	color: #7aa1a6;
+	text-decoration: none;
+}
+
+
+
+a.LkBranco:link {
+	color: #FFF;
+	text-decoration: none;
+}
+a.LkBranco:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+a.LkBranco:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+a.LkBranco:active {
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+
+#Pricipal {
+	width:100%;
+	height:auto;
+}
+
+#MenuTopo {
+	width:100%;
+	height:55px;
+	border-bottom:3px solid #333;
+	/*background-color:#7aa1a6;  546c6f*/
+	background:url('../imagens/black_linen_v2.png');
+	position:fixed;
+	top:0px;
+	z-index:999;
+	margin:0;
+	padding:0;
+	left:0;
+}
+
+ul.Menu{
+	width:100%;
+	height:55px;
+}
+
+#SombraMenu {
+	background:url('../imagens/sombra.png');
+	width:100%;
+	height:7px;
+	margin-top:3px;	
+}
+
+li.icon{
+	width:55px;
+	height:55px;
+	border-right:1px solid #333;
+	float:left;
+	cursor:pointer;
+	outline:none;
+}
+
+ul.Menu a li.icon:hover{
+	background-color:#151515;
+}
+
+
+li.icon ul{
+	 visibility: hidden;
+	 position:relative;
+	 left:-1px; 
+	 top: 55px;
+	 display: block; 
+	 width:200px;
+	 background:url('../imagens/black_linen_v2.png');
+
+	 border-bottom:3px solid #333;
+	 border-top:1px solid #333;
+}
+
+li.MenuSub{
+	width:180px;
+	height:20px;
+	cursor:pointer;
+	border-top:1px solid #333;
+	outline:none;
+	color:#FFF;
+	padding:15px 10px 10px 10px;
+}
+
+li.MenuSub:hover{
+	background-color:#151515;
+}
+	
+
+.ico-home { background:url('../imagens/24/home.png') 16px 15px no-repeat; }
+.ico-config { background:url('../imagens/24/cog-3.png') 16px 15px no-repeat; }	
+.ico-ferramenta { background:url('../imagens/24/tools.png') 16px 15px no-repeat; }
+.ico-paginas { background:url('../imagens/24/create.png') 16px 15px no-repeat; }
+.ico-email { background:url('../imagens/24/mail.png') 16px 15px no-repeat; }
+.ico-tel { background:url('../imagens/24/phone.png') 16px 15px no-repeat; }
+.ico-grafico { background:url('../imagens/24/graph.png') 16px 15px no-repeat; }
+.ico-sair { background:url('../imagens/24/exit.png') 16px 15px no-repeat; }
+
+	
+/* CONTEUDO */
+
+
+#Conteudo {
+	width:97%;
+	height:200px;
+	margin:0 auto;
+	position:relative;
+	top:80px;
+	}
+	
+
+
+/*TABELAS*/
+
+
+.Font_zero {
+	font-size:0 !important;
+}
+
+table.mws-table {
+	border-collapse:collapse;
+	border:1px solid #000;
+	width:100%;
+	background-color:#FFF;
+	margin-bottom:10px;
+	border-bottom:3px solid #000;
+	float:left;
+	
+}
+
+
+table.mws-table > tbody > tr {
+	border-collapse:collapse;
+}
+
+
+table.mws-table > tbody > tr > .Font_zero {
+	font-size:0  !important;
+}
+
+
+table.mws-table > tbody > tr:hover {
+	background-color:#e0ebec;
+	}
+
+table.mws-table > tbody > tr > td {
+	padding:5px;
+	}
+
+table.mws-table > tbody > tr > td > .Font_zero {
+	font-size:0  !important;
+}
+	
+table.mws-table > tbody > tr > td > input {
+	border:0;
+	outline:none;
+	background:none;
+	height:25px;
+	margin:0;
+	width:100%;
+	}
+	
+input.small { width:20%; }
+input.medium { width:40%; }
+input.large { width:80%; }
+
+
+table.mws-table > tbody > tr > td > a > img {
+	float:right;
+	margin-left:3px;
+	margin-top:3px;
+	border:0;
+	width:26px;
+	height:26px;
+	cursor:pointer;
+	}
+	
+table.mws-table > tbody > tr.tdColor {
+	background-color:#F4F4F4;
+}
+
+table.mws-table > tbody > tr.tdColor:hover {
+	background-color:#e0ebec;
+}
+	
+	
+table.mws-table > tbody > tr:hover > td  > a > img {
+	display:block;
+	}
+	
+
+table.mws-table > thead > tr {
+	background:url('../imagens/black_linen_v2.png');
+	border-bottom:3px solid #000;
+	color:#FFF;
+	}	
+	
+table.mws-table > thead > tr > th{
+	padding:13px 5px 13px 5px;
+	}
+	
+
+	
+ul.Menu-acoes {
+	float:right;
+	}
+	
+
+ul.Menu-acoes > a > li{
+	height:20px;
+	width:auto;
+	padding:10px 13px 8px 13px;
+	background-color:#7aa1a6;
+	color:#FFF;
+	float:left;
+	text-align:center;
+	margin-right:0px;
+	border-bottom:0px;
+	margin:1px;
+	margin-bottom:2px;
+	
+}
+
+
+ul.Menu-acoes > a > li.gray{
+	height:20px;
+	width:auto;
+	padding:10px 13px 8px 13px;
+	background-color:#F4F4F4;
+	color:#FFF;
+	float:left;
+	text-align:center;
+	margin-right:0px;
+	border-bottom:0px;
+	margin:1px;
+	margin-bottom:2px;
+	
+}
+
+ul.Menu-acoes > a > li > img{	
+}
+
+ul.Menu-acoes > a > li:hover{
+	background-color:#546c6f;	
+}
+
+
+
+
+ul.Menu-acoes > form  > a > li{
+	height:20px;
+	width:auto;
+	padding:10px 13px 8px 13px;
+	background-color:#7aa1a6;
+	color:#FFF;
+	float:left;
+	text-align:center;
+	margin-right:0px;
+	border-bottom:0px;
+	margin:1px;
+	margin-bottom:2px;
+	
+}
+
+
+ul.Menu-acoes > form  > a > li.gray{
+	height:20px;
+	width:auto;
+	padding:10px 13px 8px 13px;
+	background-color:#CCC;
+	color:#666;
+	float:left;
+	text-align:center;
+	margin-right:0px;
+	border-bottom:0px;
+	margin:1px;
+	margin-bottom:2px;
+	
+}
+
+
+
+
+ul.Menu-acoes > form  > a > li > a > img{	
+}
+
+ul.Menu-acoes > form  > a > li:hover{
+	background-color:#546c6f;	
+}
+
+
+ul.Menu-acoes > form  > a > li.gray:hover{
+	background-color:#F4F4F4;	
+}
+
+
+
+
+div.Login {
+	margin:0 auto;
+	width:300px;
+}
+
+div.Login > div.Titulo_Login {
+	background-color:#d6d6d6;
+	border-bottom:3px solid #999;
+	padding:13px 5px 13px 5px;
+	margin-top:41px;
+}
+
+div.Login > div.Body_Login {
+	background-color:#FFF;
+	border-right:1px solid #CCC;
+	border-left:1px solid #CCC;
+	border-bottom:3px solid #999;
+	padding:13px 8px 0px 8px;
+}
+
+div.Login > div.Body_Login > p {
+	margin-bottom:10px;
+}
+
+div.Login > div.Body_Login > p > span{
+	color:#7aa1a6;
+}
+
+
+
+
+div.box_Atualizacoes { width:300px;}
+div.box_Paginas { width:100%; clear:both;}
+
+div.Box {
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+div.Box > div.Titulo_box {
+	background:url('../imagens/black_linen_v2.png');
+	border-bottom:3px solid #000;
+	padding:13px 5px 13px 5px;
+	margin-top:41px;
+	color:#FFF;
+}
+
+div.Box > div.Body_box {
+	background-color:#FFF;
+	border-right:1px solid #000;
+	border-left:1px solid #000;
+	border-bottom:3px solid #000;
+	padding:13px 8px 0px 8px;
+}
+
+div.Box > div.Body_box > p {
+	margin-bottom:10px;
+}
+
+div.Box > div.Body_box > p > span{
+	color:#7aa1a6;
+}
+
+
+div.box_InfoFerramenta {
+	width: 540px;
+}
+
+div.box_CamposBancos {
+	width: 710px;
+}
+
+
+
+input.LoginInput {
+	outline:none;
+	color:#666;
+	border:1px solid #CCC;
+	padding:5px;
+	width:270px;
+}
+
+
+label {
+	width: 100%;
+	clear: both;
+	float: none;
+	color: #CCC;
+}
+
+input {
+	outline:none;
+	color:#666;
+	border:1px solid #CCC;
+	padding:10px;
+	margin-bottom: 10px;
+}
+
+select {
+	outline:none;
+	color:#666;
+	border:1px solid #CCC;
+	height: 38px;
+	margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+	width: 15px;
+	height: 15px;
+	border: 0px;
+	padding: 0;
+}
+
+input.LoginBotao {
+	background-color:#5ec9a2;
+	outline:none;
+	color:#FFF;
+	border:0px;
+	border-bottom:3px solid #399b77;
+	padding:8px;
+}
+
+input.Bt-green {
+	background-color:#5ec9a2;
+	outline:none;
+	color:#FFF;
+	border:0px;
+	border-bottom:3px solid #399b77;
+	padding:8px;
+	cursor: pointer;
+}
+
+input.Bt-red {
+	background-color:#df5b5b;
+	outline:none;
+	color:#FFF;
+	border:0px;
+	border-bottom:3px solid #be2929;
+	padding:8px;
+	cursor: pointer;
+}
+
+input.Bt-gray {
+	background-color:#cfcfcf;
+	outline:none;
+	color:#FFF;
+	border:0px;
+	border-bottom:3px solid #696767;
+	padding:8px;
+	cursor: pointer;
+}
+
+input.Bt-blue {
+	background-color:#0095d3;
+	outline:none;
+	color:#FFF;
+	border:0px;
+	border-bottom:3px solid #00384f;
+	padding:8px;
+	cursor: pointer;
+}
+
+div.Body_Login > p {
+	color:#7aa1a6;
+}
+
+
+/*////////////////////////////AVISO//////////////////////////////*/
+
+div.aviso {
+	width:100%;
+	color:#636363;
+	margin-bottom:10px;
+}
+
+div.aviso > p {
+	margin:15px;
+}
+
+div.erro { background-color:#ffd7d7; border:1px dashed #db6a6b; }
+div.certo { background-color:#dbf4d8; border:1px dashed #6fc166; }
+div.alerta { background-color:#f0ccfc; border:1px dashed #a847c8; }
+div.info { background-color:#d1eff9; border:1px dashed #4aa0bc; }
+div.atencao { background-color:#faffd0; border:1px dashed #d6cb19; }
+
+	
+
+.OpFerramentas {
+	width: 500px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #f4f4f4;
+}
+
+
+
+table.TableCamposDB {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+
+table.TableCamposDB > thead > tr > td {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	padding: 5px;
+	background-color: #f4f4f4;
+}
+
+table.TableCamposDB > tbody > tr > td {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	padding: 5px 5px 0 5px;
+	background-color: #FFF;
+}
+
+
+table.TableCamposDB > tbody > tr > td > input {
+	height: 20px !important;
+	padding: 3px;
+}
+
+table.TableCamposDB > tbody > tr > td > select {
+	height: 26px;
+	padding: 0;
+}
+
+li > input {
+	height: 20px;
+	padding: 0px;
+	border: 0px;
+}
+
+#resultados_table {
+	width:40px;
+	text-align:center;
+	background-color:#7aa1a6;
+	color:#FFF;
+	outline:none;
+}
+
+/*/////////////////////GALERIA///////////////////////////*/
+
+.Imagens_box {
+	width:160px;
+	height:auto;
+	float:left;
+	padding:5px;
+	border:1px solid #CCC;
+	background:#f4f4f4;
+	margin-right:10px;
+	cursor:move;
+	margin-bottom:10px;
+}
+
+.Imagens_box_IMG {
+	margin-bottom:5px;
+}
+
+.bt_imagemBox {
+	width:152px;
+	margin-bottom:5px;
+	padding:3px;
+	border:1px solid #CCC;
+	color:#000;
+}
+
+.bt_marca_dagua {
+	background:#dbe6ea;
+	border:1px solid #98b5bf;
+}
+
+.bt_capa {
+	background:#b2ff90;
+	border:1px solid #c7d7b8;
+}
+
+.bt_capa_off {
+	background:#ebebeb;
+	border:1px solid #CCCCCC;
+}
+
+
+.bt_texto {
+	background:#FFFFFF;
+	border:1px solid #CCC;
+}
+
+.bt_excluir {
+	background:#edd0d0;
+	border:1px solid #e88888;
+}
