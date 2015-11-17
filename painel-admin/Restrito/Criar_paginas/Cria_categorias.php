@@ -15,7 +15,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 	?>
 
-<? require_once( "Sistema/Classes/alertas.inc.php");  ?>
+<?php require_once( "Sistema/Classes/alertas.inc.php");  ?>
 
 
 
@@ -110,7 +110,7 @@ if(isset($_GET[\'Limpar\'])) {
 
 
 
-<? if(isset($_GET[\'EDI\'])) { 
+<?php if(isset($_GET[\'EDI\'])) { 
 
 $EDI = mysql_real_escape_string($_GET[\'EDI\']);
 
@@ -122,14 +122,14 @@ $retorna_ED = mysql_fetch_array($sql_cat_ED);
 ?>
 
 
-Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Titulo_banco.'</a>  > categorias
+Ferramentas > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>">'.$Titulo_banco.'</a>  > categorias
 
 <div class="Box box_Paginas">	
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=<?=$Pagina_home?>"><li>Pagina Principal</li></a>
-                <a href="?pg=<?=$Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
+                <a href="?pg=<?php echo $Pagina_home?>"><li>Pagina Principal</li></a>
+                <a href="?pg=<?php echo $Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
             
@@ -139,14 +139,14 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Tit
 </div>
 <div class="Body_box">
 
-<form action="?pg=<?=$Pagina?>" class="mws-form" method="post" name="cadastro"  enctype="multipart/form-data">
+<form action="?pg=<?php echo $Pagina?>" class="mws-form" method="post" name="cadastro"  enctype="multipart/form-data">
 
 
 <label>Categoria</label><br/>
-<input name="categoria" id="categoria" class="mws-textinput" style="width:330px;" value="<?=$retorna_ED[\'titulo\']?>" type="text" /><br/>
+<input name="categoria" id="categoria" class="mws-textinput" style="width:330px;" value="<?php echo $retorna_ED[\'titulo\']?>" type="text" /><br/>
 
 
-<input name="id_EDIT" id="id_EDIT" style="width:290px;" value="<?=$retorna_ED[\'id\']?>" type="hidden" />
+<input name="id_EDIT" id="id_EDIT" style="width:290px;" value="<?php echo $retorna_ED[\'id\']?>" type="hidden" />
 
 
 
@@ -155,12 +155,12 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Tit
 
 <option value="0">Escolha</option>
 
-<? $sql_cat = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = 0 ")or(die(mysql_error()));
+<?php $sql_cat = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = 0 ")or(die(mysql_error()));
 while($retorna = mysql_fetch_array($sql_cat)) { ?>
 
-<option value="<?=$retorna[\'id\']?>" <? if($retorna[\'id\'] == $retorna_ED[\'id_sub\']) { echo \'selected="selected"\'; } ?> ><?=$retorna[\'titulo\']?></option>
+<option value="<?php echo $retorna[\'id\']?>" <?php if($retorna[\'id\'] == $retorna_ED[\'id_sub\']) { echo \'selected="selected"\'; } ?> ><?php echo $retorna[\'titulo\']?></option>
 
-<? }  ?>
+<?php }  ?>
 
 </select><br/>
 
@@ -178,7 +178,7 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?>
 
 
 
-<? } else { ?>
+<?php } else { ?>
 
 
 
@@ -187,8 +187,8 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?>
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=<?=$Pagina_home?>"><li>Pagina Principal</li></a>
-                <a href="?pg=<?=$Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
+                <a href="?pg=<?php echo $Pagina_home?>"><li>Pagina Principal</li></a>
+                <a href="?pg=<?php echo $Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
             
@@ -198,7 +198,7 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?>
 </div>
 <div class="Body_box">
 
-<form action="?pg=<?=$Pagina?>" method="post" class="mws-form" name="cadastro"  enctype="multipart/form-data">
+<form action="?pg=<?php echo $Pagina?>" method="post" class="mws-form" name="cadastro"  enctype="multipart/form-data">
 
 
 <label>Categoria</label><br />
@@ -214,9 +214,9 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?>
 
 <option>Escolha</option>
 
-<? $sql_cat = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = 0 ")or(die(mysql_error()));
+<?php $sql_cat = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = 0 ")or(die(mysql_error()));
 
-while($retorna = mysql_fetch_array($sql_cat)) { ?><option value="<?=$retorna[\'id\']?>" ><?=$retorna[\'titulo\']?></option><? }  ?>
+while($retorna = mysql_fetch_array($sql_cat)) { ?><option value="<?php echo $retorna[\'id\']?>" ><?php echo $retorna[\'titulo\']?></option><?php }  ?>
 
 </select><br />
 
@@ -234,7 +234,7 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?><option value="<?=$retorna[\'i
 
 
 
-<? } ?>
+<?php } ?>
 
 
 <table class="mws-table">
@@ -251,7 +251,7 @@ while($retorna = mysql_fetch_array($sql_cat)) { ?><option value="<?=$retorna[\'i
 
 <tbody>
 
-<? 
+<?php 
 
 $sql_cat = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = 0 ")or(die(mysql_error()));
 $contador = mysql_num_rows($sql_cat); ?>
@@ -268,7 +268,7 @@ $contador = mysql_num_rows($sql_cat); ?>
                             </tr>
                             
                             
-                            <? } ?>
+                            <?php } ?>
 
 
 <?
@@ -279,20 +279,20 @@ if(($xLinhasCor++)%2 == 0 ) { $CorLinha = \'class="tdColor"\'; }else{ $CorLinha 
 
 ?>
 
-<tr <?=$CorLinha?>>
+<tr <?php echo $CorLinha?>>
 
-<td><?=$retorna[\'titulo\']?></td>
+<td><?php echo $retorna[\'titulo\']?></td>
 
 <td>
 
 
 
-<? if ($retorna[\'status\'] == \'ON\') { ?>
+<?php if ($retorna[\'status\'] == \'ON\') { ?>
 
-<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>" target="_self" ><font color="#009900" >Publicado</font></a>
-<? } else { ?>
-<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>" target="_self" ><font color="#333333" style="text-decoration:line-through;">Publicado</font></a>
-<? } ?>
+<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>" target="_self" ><font color="#009900" >Publicado</font></a>
+<?php } else { ?>
+<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>" target="_self" ><font color="#333333" style="text-decoration:line-through;">Publicado</font></a>
+<?php } ?>
 
 
 
@@ -300,8 +300,8 @@ if(($xLinhasCor++)%2 == 0 ) { $CorLinha = \'class="tdColor"\'; }else{ $CorLinha 
 
 <td>
 
-<a href="?pg=<?=$Pagina?>&EDI=<?=$retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-<a href="?pg=<?=$Pagina?>&EX=<?=$retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+<a href="?pg=<?php echo $Pagina?>&EDI=<?php echo $retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+<a href="?pg=<?php echo $Pagina?>&EX=<?php echo $retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
 
 </td>
 
@@ -309,7 +309,7 @@ if(($xLinhasCor++)%2 == 0 ) { $CorLinha = \'class="tdColor"\'; }else{ $CorLinha 
 
 
 
-<? 
+<?php 
 
 $sql_cat_sub = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = \'$id\' ")or(die(mysql_error()));
 while($retorna_sub = mysql_fetch_array($sql_cat_sub)) {
@@ -320,19 +320,19 @@ while($retorna_sub = mysql_fetch_array($sql_cat_sub)) {
 
 
 
-<tr <?=$CorLinha?>>
+<tr <?php echo $CorLinha?>>
 
-<td><font color="#0099FF">---- <?=$retorna_sub[\'titulo\']?></font></td>
+<td><font color="#0099FF">---- <?php echo $retorna_sub[\'titulo\']?></font></td>
 
 <td>
 
 
 
-<? if ($retorna_sub[\'status\'] == \'ON\') { ?>
-<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna_sub[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna_sub[\'id\']?>" target="_self"><font color="#009900" >Publicado</font></a>
-<? } else { ?>
-<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna_sub[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna_sub[\'id\']?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Publicado</font></a>
-<? } ?>
+<?php if ($retorna_sub[\'status\'] == \'ON\') { ?>
+<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna_sub[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna_sub[\'id\']?>" target="_self"><font color="#009900" >Publicado</font></a>
+<?php } else { ?>
+<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna_sub[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna_sub[\'id\']?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Publicado</font></a>
+<?php } ?>
 
 
 
@@ -344,15 +344,15 @@ while($retorna_sub = mysql_fetch_array($sql_cat_sub)) {
 
 <td>
 
-<a href="?pg=<?=$Pagina?>&EDI=<?=$retorna_sub[\'id\']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-<a href="?pg=<?=$Pagina?>&EX=<?=$retorna_sub[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+<a href="?pg=<?php echo $Pagina?>&EDI=<?php echo $retorna_sub[\'id\']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+<a href="?pg=<?php echo $Pagina?>&EX=<?php echo $retorna_sub[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
 
 </td>
 
 </tr>
 
 
-<? } } ?>
+<?php } } ?>
 
 
 

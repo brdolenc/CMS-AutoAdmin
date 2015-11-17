@@ -14,7 +14,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 	?>
 
-<? 
+<?php 
 
 require_once( "Sistema/Classes/alertas.inc.php"); 
 require_once( "Sistema/Classes/PermaLink.inc.php"); 
@@ -249,29 +249,29 @@ function NovaJanela(pagina,nome,w,h,scroll){
 
 
 
-<form action="index.php?pg=<?=$Pagina?>&editar=ok&Id_Princ=<?=$id_Principal?>"  method="post" enctype="multipart/form-data" name="frm1" onSubmit="return _jsSubmit();">
+<form action="index.php?pg=<?php echo $Pagina?>&editar=ok&Id_Princ=<?php echo $id_Principal?>"  method="post" enctype="multipart/form-data" name="frm1" onSubmit="return _jsSubmit();">
                     
                     
-     <? 
+     <?php 
                             
        	$sql = mysql_query("SELECT * FROM ".$Banco." WHERE id_sub = \'$id_Principal\' ORDER BY id DESC")or(die(mysql_error()));
 		$contador = mysql_num_rows($sql);
 							
 	?>
-            Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><?=$Ferramenta_principal?></a> > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><?=$Titulo_banco?></a>                 
+            Ferramentas > <a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><?php echo $Ferramenta_principal?></a> > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><?php echo $Titulo_banco?></a>                 
                             
             <ul class="Menu-acoes">
-          			<a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?=$Titulo_banco?></li></a>
-          			<a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?=$Ferramenta_principal?></li></a>
+          			<a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?php echo $Titulo_banco?></li></a>
+          			<a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?php echo $Ferramenta_principal?></li></a>
                     <a href="#" onclick="document.frm1.submit();"><li>Editar</li></a>
-                    <a href="?pg=<?=$Pagina_cadastrar?>"><li>Cadastrar</li></a>
-                    <a href="?pg=<?=$Pagina?>&Limpar=ok&Id_Princ=<?=$id_Principal?>" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
+                    <a href="?pg=<?php echo $Pagina_cadastrar?>"><li>Cadastrar</li></a>
+                    <a href="?pg=<?php echo $Pagina?>&Limpar=ok&Id_Princ=<?php echo $id_Principal?>" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
                     <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>
-                    <a href="#"  onclick="window.location.reload()"><li><input type="text" name="contador" id="resultados_table" class="edite_titulos" value="<?=$contador?>">resultado(s)</li></a>
+                    <a href="#"  onclick="window.location.reload()"><li><input type="text" name="contador" id="resultados_table" class="edite_titulos" value="<?php echo $contador?>">resultado(s)</li></a>
 					
-					<? if($Categoria_criar == 1) { ?>
-                    	<a href="?pg=<?=$Pagina_cat?>&Id_Princ=<?=$id_Principal?>"><li>Cadastrar categoria</li></a>
-					<? }?>     		
+					<?php if($Categoria_criar == 1) { ?>
+                    	<a href="?pg=<?php echo $Pagina_cat?>&Id_Princ=<?php echo $id_Principal?>"><li>Cadastrar categoria</li></a>
+					<?php }?>     		
             </ul>
                     
                    
@@ -303,10 +303,10 @@ function NovaJanela(pagina,nome,w,h,scroll){
                             </tr>
                             
                             
-                            <? } ?>
+                            <?php } ?>
 
 
-                     <? 
+                     <?php 
 							
                             while($retorna = mysql_fetch_array($sql)) {
                             $id     = $retorna[\'\'.$Referencial.\'\'];
@@ -316,14 +316,14 @@ function NovaJanela(pagina,nome,w,h,scroll){
                             ?>
 
 						
-					<tr <?=$CorLinha?>>
+					<tr <?php echo $CorLinha?>>
                             
                         <td align="left" valign="top" class="Font_zero">
-                             	<input type="text" name="'.$Campo_Referencial.'[]" value="<?=$id?>"  readonly="readonly" class="edite_titulos"><?=$id?>
+                             	<input type="text" name="'.$Campo_Referencial.'[]" value="<?php echo $id?>"  readonly="readonly" class="edite_titulos"><?php echo $id?>
 						</td>
 							 
 						<td class="Font_zero">
-                            	<input type="text"  class="edite_titulos" style="width:100%" name="'.$Campo_principal.'[]" value="<?=$nome?>"><?=$nome?>
+                            	<input type="text"  class="edite_titulos" style="width:100%" name="'.$Campo_principal.'[]" value="<?php echo $nome?>"><?php echo $nome?>
                         </td>
 
 							
@@ -331,30 +331,30 @@ function NovaJanela(pagina,nome,w,h,scroll){
                         
 						
                            
-                            <? if($Categoria_criar == 1) { ?>                            
-                            <?    
+                            <?php if($Categoria_criar == 1) { ?>                            
+                            <?php    
                             $Cat = mysql_query("SELECT * FROM ".$Banco_cat." WHERE id = \'$id_Cat\'")or(die(mysql_error()));
                             $Categoria = mysql_fetch_array($Cat);	
 								$id_Cat_Verific = $Categoria[\'id\']
                             ?>
                             <select name="categoria[]" id="categoria" style=" height:25px; margin:0;">
                             	<option value="0">escolha</option>
-                            	<? 
+                            	<?php 
 									$sql_cat = mysql_query("SELECT * FROM ".$Banco_cat." WHERE id_sub = 0  AND status = \'ON\'")or(die(mysql_error()));
 		                            while($retorna_cat = mysql_fetch_array($sql_cat)) { 
 									$id_Principal_b = $retorna_cat[\'id\'];
 								?>
-                            		<option  value="<?=$retorna_cat[\'id\']?>" <? if($retorna_cat[\'id\'] == $id_Cat_Verific) { echo \'selected="selected"\'; } ?> ><?=$retorna_cat[\'titulo\']?></option>
-                            	<? 
+                            		<option  value="<?php echo $retorna_cat[\'id\']?>" <?php if($retorna_cat[\'id\'] == $id_Cat_Verific) { echo \'selected="selected"\'; } ?> ><?php echo $retorna_cat[\'titulo\']?></option>
+                            	<?php 
 									$sql_Sub = mysql_query("SELECT * FROM ".$Banco_cat." WHERE id_sub = \'$id_Principal_b\'  AND status = \'ON\' ")or(die(mysql_error()));
 		                            while($retorna_sub = mysql_fetch_array($sql_Sub)) { 
 									$id_Principal_b = $retorna_sub[\'id\'];
 								?>
-                            		<option value="<?=$retorna_sub[\'id\']?>" <? if($retorna_sub[\'id\'] == $id_Cat_Verific) { echo \'selected="selected"\'; } ?> >--<?=$retorna_sub[\'titulo\']?></option>
-                            <?  }  ?>                          
-                            <?  }  ?>
+                            		<option value="<?php echo $retorna_sub[\'id\']?>" <?php if($retorna_sub[\'id\'] == $id_Cat_Verific) { echo \'selected="selected"\'; } ?> >--<?php echo $retorna_sub[\'titulo\']?></option>
+                            <?php  }  ?>                          
+                            <?php  }  ?>
                             </select>
-                            <? } ?>
+                            <?php } ?>
 							
 							
 							
@@ -370,29 +370,29 @@ function NovaJanela(pagina,nome,w,h,scroll){
 											if ($retornaSub[\'status\'] == \'ON\') {
                                         
                             ?>  
-                              <a href="?pg=paginas/<?=$SubFerramentas[$xs]?>/<?=$SubFerramentas[$xs]?>&Id_Princ=<?=$id?>" target="_self"><?=ucfirst($SubFerramentas[$xs])?></a>												
-                            <? } } } ?>
+                              <a href="?pg=paginas/<?php echo $SubFerramentas[$xs]?>/<?php echo $SubFerramentas[$xs]?>&Id_Princ=<?php echo $id?>" target="_self"><?php echo ucfirst($SubFerramentas[$xs])?></a>												
+                            <?php } } } ?>
 							
 
 
-                            <? if ($retorna[\'status\'] == \'ON\') { ?>							
-								<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?=$id_Principal?>" target="_self"><font color="#009900" >Publicado</font> | </a>
-                            <? } else { ?>
-								<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?=$id_Principal?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Publicado</font> | </a>
-                            <? } ?>
+                            <?php if ($retorna[\'status\'] == \'ON\') { ?>							
+								<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?php echo $id_Principal?>" target="_self"><font color="#009900" >Publicado</font> | </a>
+                            <?php } else { ?>
+								<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?php echo $id_Principal?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Publicado</font> | </a>
+                            <?php } ?>
                             
                             
 
-                            <? if( $Destaque_criar == 1) { ?>
+                            <?php if( $Destaque_criar == 1) { ?>
 							
-								<? if ($retorna[\'destaque\'] == \'ON\') { ?>
-									<a href="?pg=../Sistema/Includes/destaque&banco=<?=$Banco?>&status=<?=$retorna[\'destaque\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?=$id_Principal?>" target="_self"><font color="#009900" >Destaque</font> | </a>
-								<? } else { ?>
-									<a href="?pg=../Sistema/Includes/destaque&banco=<?=$Banco?>&status=<?=$retorna[\'destaque\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?=$id_Principal?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Destaque</font> | </a>
-								<? } ?>
+								<?php if ($retorna[\'destaque\'] == \'ON\') { ?>
+									<a href="?pg=../Sistema/Includes/destaque&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'destaque\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?php echo $id_Principal?>" target="_self"><font color="#009900" >Destaque</font> | </a>
+								<?php } else { ?>
+									<a href="?pg=../Sistema/Includes/destaque&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'destaque\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\''.$Campo_Referencial.'\']?>&Id_Princ=<?php echo $id_Principal?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Destaque</font> | </a>
+								<?php } ?>
 							
 							
-                            <? } ?>
+                            <?php } ?>
                             
 							
 							
@@ -401,22 +401,22 @@ function NovaJanela(pagina,nome,w,h,scroll){
                             <td align="left" valign="middle">
                             
                             
-                           <? if( $Galeria_criar == 1) { ?>
-                           <? 
+                           <?php if( $Galeria_criar == 1) { ?>
+                           <?php 
                             
                            $Gal = mysql_query("SELECT * FROM ".$Banco_galeria." WHERE id_princ = \'$id\'")or(die(mysql_error()));
 						   $galeria = mysql_num_rows($Gal);
 							
 						   ?>
                             
-                           <a href="?pg=<?=$Pagina_galeria?>&id=<?=$id?>" target="_self"><img src="Arquivos/css/grey/Image_2.png" title="Galeria (<?=$galeria?>)"/></a>
-                           <? } ?>
+                           <a href="?pg=<?php echo $Pagina_galeria?>&id=<?php echo $id?>" target="_self"><img src="Arquivos/css/grey/Image_2.png" title="Galeria (<?php echo $galeria?>)"/></a>
+                           <?php } ?>
 							
 							
 							
 							
-							<? if( $Upload_criar == 1) { ?>
-                            <? 
+							<?php if( $Upload_criar == 1) { ?>
+                            <?php 
                             
                             $Gal = mysql_query("SELECT * FROM ".$Banco_upload." WHERE id_princ = \'$id\'")or(die(mysql_error()));
 							$galeria = mysql_num_rows($Gal);
@@ -425,15 +425,15 @@ function NovaJanela(pagina,nome,w,h,scroll){
 
                             ?>
                             
-                            <a href="?pg=<?=$Pagina_up?>&id=<?=$id?>" target="_self"><img  src="Arquivos/css/grey/Box_Incoming.png" title="Upload (<?=$galeria?>)"/></a>
+                            <a href="?pg=<?php echo $Pagina_up?>&id=<?php echo $id?>" target="_self"><img  src="Arquivos/css/grey/Box_Incoming.png" title="Upload (<?php echo $galeria?>)"/></a>
 							
-                            <? } ?>
+                            <?php } ?>
                             
                             
                             
-                            <? if($Comentarios_criar == 1) { ?>
+                            <?php if($Comentarios_criar == 1) { ?>
 
-                            <? 
+                            <?php 
                             
                             $Com = mysql_query("SELECT * FROM ".$Banco_coment." WHERE id_princ = \'$id\' AND status = \'OFF\'")or(die(mysql_error()));
 							$cont = mysql_num_rows($Com);
@@ -443,25 +443,25 @@ function NovaJanela(pagina,nome,w,h,scroll){
                             ?>
                             
 							
-							<? if($cont == 0) {?>
-                            <a href="?pg=<?=$Pagina_coment?>&id_pag=<?=$id?>" target="_self"><img src="Arquivos/css/grey/Speech_Bubble.png" title="Comentarios (<?=$cont?>)"/></a>
-                            <? }else{ ?>
-                            <a href="?pg=<?=$Pagina_coment?>&id_pag=<?=$id?>" target="_self"><img src="Arquivos/css/grey/Speech_Bubble_on.png" title="Comentarios (<?=$cont?>)"/></a>
-                            <? } ?>
+							<?php if($cont == 0) {?>
+                            <a href="?pg=<?php echo $Pagina_coment?>&id_pag=<?php echo $id?>" target="_self"><img src="Arquivos/css/grey/Speech_Bubble.png" title="Comentarios (<?php echo $cont?>)"/></a>
+                            <?php }else{ ?>
+                            <a href="?pg=<?php echo $Pagina_coment?>&id_pag=<?php echo $id?>" target="_self"><img src="Arquivos/css/grey/Speech_Bubble_on.png" title="Comentarios (<?php echo $cont?>)"/></a>
+                            <?php } ?>
                             
                             
                             
-                            <? } ?>
+                            <?php } ?>
                             
                           
-                            <a href="?pg=<?=$Pagina_editar?>&id=<?=$id?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-                            <a href="?pg=<?=$Pagina?>&ex=<?=$id?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                            <a href="?pg=<?php echo $Pagina_editar?>&id=<?php echo $id?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+                            <a href="?pg=<?php echo $Pagina?>&ex=<?php echo $id?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
                             
 							</td>
 							</tr>
                             
                             
-                            <? } ?>
+                            <?php } ?>
                             
                             
                         

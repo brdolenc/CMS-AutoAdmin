@@ -163,7 +163,7 @@ function GerarCodigo() {
 	
 	if(MascaraCode != '') {
 
-	ScriptMasc = "$('#<?=$NomeCampo?>').mask('"+MascaraCode+"');";
+	ScriptMasc = "$('#<?php echo $NomeCampo?>').mask('"+MascaraCode+"');";
 	
 		$('#CodigoPr').val(ScriptMasc);
 
@@ -213,8 +213,8 @@ Ex: 99/99-999.999 p/ Numeros <br />Ex: aa-999 p/ Numeros e Letras  <br />Ex:  AA
 
 <input type="submit" name="submit" value="Clique em Gerar Codigo" class="Bt-blue" /><br /><br /> 
 
-<input type="text" name="NomeCampo" id="NomeCampo" value="<?=$NomeCampo?>"  hidden="hidden"/>
-<input type="text" name="Ferramenta" id="Ferramenta" value="<?=$Ferramenta?>"  hidden="hidden"/>
+<input type="text" name="NomeCampo" id="NomeCampo" value="<?php echo $NomeCampo?>"  hidden="hidden"/>
+<input type="text" name="Ferramenta" id="Ferramenta" value="<?php echo $Ferramenta?>"  hidden="hidden"/>
 
 
 </form>

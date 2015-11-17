@@ -16,7 +16,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	?>
 
 
-   <? require_once( "Sistema/Classes/alertas.inc.php"); ?>
+   <?php require_once( "Sistema/Classes/alertas.inc.php"); ?>
      
      
      	<?php 
@@ -74,13 +74,13 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
    
 
        
-        <form action="?pg=<?=$Pagina?>&id_pag=<?=$id?>" method="post" class="mws-form" name="coment" enctype="multipart/form-data"  >
+        <form action="?pg=<?php echo $Pagina?>&id_pag=<?php echo $id?>" method="post" class="mws-form" name="coment" enctype="multipart/form-data"  >
 		
-		Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Titulo_banco.'</a> > comentarios
+		Ferramentas > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>">'.$Titulo_banco.'</a> > comentarios
 		
 		<ul class="Menu-acoes">
-                <a href="?pg=<?=$Pagina_home?>"><li>Pagina Principal</li></a>
-                <a href="?pg=<?=$Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
+                <a href="?pg=<?php echo $Pagina_home?>"><li>Pagina Principal</li></a>
+                <a href="?pg=<?php echo $Pagina?>&Limpar=ok" oncLick="return confirm(\'Essa ação apaga todos os dados armazenados, deseja continuar ?\');"><li>Limpar</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>   
                 <a href="#"  onclick="document.coment.submit();"><li>Excluir comentarios selecionados</li></a>   		
 		</ul>
@@ -127,10 +127,10 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 </thead>
 <tbody>
 		
-		<tr <? if ($retorna[\'spam\'] == \'ON\') { ?> bgcolor="#ff8e8e" <? } ?> <? if ($retorna[\'status\'] == \'OFF\') { ?> bgcolor="#a8fdd8" <? } ?> >
-        <td><?=$retorna[\'nome\']?></td>
-        <td><?=$retorna[\'email\'];?></td>
-        <td><?=$retorna[\'data\'];?></td>
+		<tr <?php if ($retorna[\'spam\'] == \'ON\') { ?> bgcolor="#ff8e8e" <?php } ?> <?php if ($retorna[\'status\'] == \'OFF\') { ?> bgcolor="#a8fdd8" <?php } ?> >
+        <td><?php echo $retorna[\'nome\']?></td>
+        <td><?php echo $retorna[\'email\'];?></td>
+        <td><?php echo $retorna[\'data\'];?></td>
         <td>
 		
 		
@@ -140,11 +140,11 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
             
             if ($retorna[\'status\'] == \'ON\') { ?>
             		 
-			 <a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>&pagid=<?=$id?>" target="_self"><font color="#009900" >Publicado</font></a> |
+			 <a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>&pagid=<?php echo $id?>" target="_self"><font color="#009900" >Publicado</font></a> |
 			
-            <? } else { ?> 
+            <?php } else { ?> 
             
-			<a href="?pg=../Sistema/Includes/status&banco=<?=$Banco?>&status=<?=$retorna[\'status\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>&pagid=<?=$id?>" target="_self" ><font color="#333333" style="text-decoration:line-through;">Publicado</font></a> |
+			<a href="?pg=../Sistema/Includes/status&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'status\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>&pagid=<?php echo $id?>" target="_self" ><font color="#333333" style="text-decoration:line-through;">Publicado</font></a> |
 			
             <?
             
@@ -158,11 +158,11 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
             
             if ($retorna[\'spam\'] == \'ON\') { ?>
             
-			 <a href="?pg=../Sistema/Includes/spam&banco=<?=$Banco?>&status=<?=$retorna[\'spam\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>&pagid=<?=$id?>" target="_self"><font color="#990000" >Spam</font></a> |
+			 <a href="?pg=../Sistema/Includes/spam&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'spam\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>&pagid=<?php echo $id?>" target="_self"><font color="#990000" >Spam</font></a> |
 			
-            <? } else { ?> 
+            <?php } else { ?> 
             
-			<a href="?pg=../Sistema/Includes/spam&banco=<?=$Banco?>&status=<?=$retorna[\'spam\']?>&pagina=<?=$Pagina?>&id=<?=$retorna[\'id\']?>&pagid=<?=$id?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Spam</font></a> |
+			<a href="?pg=../Sistema/Includes/spam&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'spam\']?>&pagina=<?php echo $Pagina?>&id=<?php echo $retorna[\'id\']?>&pagid=<?php echo $id?>" target="_self"><font color="#333333" style="text-decoration:line-through;">Spam</font></a> |
 			
             <?
             
@@ -177,7 +177,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
         
         <td>
         
-        <input name="excluir[]" type="checkbox" style="width:15px;" value="<?=$retorna[\'id\']?>" />
+        <input name="excluir[]" type="checkbox" style="width:15px;" value="<?php echo $retorna[\'id\']?>" />
         
         </td>
         
@@ -185,14 +185,14 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
         
         
         <tr>
-        	<td colspan="5"><?=$retorna[\'comentario\']?></td>
+        	<td colspan="5"><?php echo $retorna[\'comentario\']?></td>
         </tr>
         
               
 		</tbody>
         </table> 
          
-    <? } ?>
+    <?php } ?>
 			
 			
             

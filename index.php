@@ -10,6 +10,10 @@
 	$INT = new Inteligencia();
 	require_once('painel-admin/Sistema/Classes/login.inc.php');
 	
+	//verifica se o arquivo install existe
+	if(file_exists('install.php')){
+		header('location: install.php');
+	}
 	
 	//CONECTA NO BANCO
 	echo $DB->conectMysql();

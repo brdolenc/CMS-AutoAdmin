@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
 
@@ -15,7 +15,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 
 
 
-<? 
+<?php 
 
 require_once( "Sistema/Classes/alertas.inc.php"); 
 require_once( "Sistema/Classes/PermaLink.inc.php"); 
@@ -189,7 +189,7 @@ $Conteudo_Pagina_Edit .= '
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Nome_Pagina_Principal?>/<?=$Nome_Pagina_Principal?>"><li>Pagina Principal</li></a>
+                <a href="?pg=paginas/<?php echo $Nome_Pagina_Principal?>/<?php echo $Nome_Pagina_Principal?>"><li>Pagina Principal</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
             
@@ -228,7 +228,7 @@ $Conteudo_Pagina_Edit .= '
 '; ?>
 
                        
-                        <? 
+                        <?php 
 						
 						 $Conteudo_Pagina_Edit .= false;
 						 $Mascaras_Criadas_editar .= false;
@@ -281,21 +281,21 @@ $Conteudo_Pagina_Edit .= '
 										elseif($Matriz['Tamanho'][$x] > 200) { $Tamanha_campo = 'large'; } 
 								 else { $Tamanha_campo = 'small'; };
 								 
-								  if(strtolower($Matriz['Tipo'][$x]) == 'text') { $Tipo_Input = '<textarea rows="10" style="width: 100%;"  name="'.strtolower($Matriz['Campo'][$x]).'" id="'.strtolower($Matriz['Campo'][$x]).'" ><?=$retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?></textarea>'; } 
+								  if(strtolower($Matriz['Tipo'][$x]) == 'text') { $Tipo_Input = '<textarea rows="10" style="width: 100%;"  name="'.strtolower($Matriz['Campo'][$x]).'" id="'.strtolower($Matriz['Campo'][$x]).'" ><?php echo $retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?></textarea>'; } 
 												 
 														else { 
 														
 														if(strtolower($Matriz['Tipo'][$x]) == 'date') {  
 														
-														$Masc_Value = '<?=substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4);?>';}
+														$Masc_Value = '<?php echo substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4);?>';}
 														
 														elseif(strtolower($Matriz['Tipo'][$x]) == 'datetime'){ 
 														
-														$Masc_Value = '<?=substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4).\' \'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],10,9);?>';}
+														$Masc_Value = '<?php echo substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4).\' \'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],10,9);?>';}
 														
 														else{
 														
-														$Masc_Value = '<?=$retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?>';}
+														$Masc_Value = '<?php echo $retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?>';}
 														
 														
 														$NomeM_      = strtolower($Matriz['Campo'][$x]);
@@ -304,7 +304,7 @@ $Conteudo_Pagina_Edit .= '
 														$PaginaM_    = $Titulo_banco.'_mudar.php';
 														$ValueM_     = $Masc_Value;
 														
-														$ValueM_ = str_replace('<?=','(@@)',$ValueM_);
+														$ValueM_ = str_replace('<?php echo ','(@@)',$ValueM_);
 														$ValueM_ = str_replace('?>','(@)',$ValueM_);
 														$ValueM_ = str_replace("'","@!",$ValueM_);
 														$ValueM_ = str_replace('"','!@',$ValueM_);

@@ -13,7 +13,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 ?>
 
-<? require_once( "Sistema/Classes/alertas.inc.php"); ?>
+<?php require_once( "Sistema/Classes/alertas.inc.php"); ?>
 
 
 
@@ -119,7 +119,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 					{
 					placeholder: "Imagens_box",
 					opacity: 0.8, cursor: \'move\', update: function() {
-							var order = $(this).sortable("serialize") + \'&update=update&banco=<?=$Banco?>\'; 
+							var order = $(this).sortable("serialize") + \'&update=update&banco=<?php echo $Banco?>\'; 
 							$.post("Sistema/Includes/updateGaleria.php", order, function(theResponse){
 							}); 															 
 						}								  
@@ -134,7 +134,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 
 <div class="aviso info" id="aviso"><p>Mova as imagens para alterar sua posição</p></div>
 
-Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><?=$Ferramenta_principal?></a> > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><?=$Titulo_banco?></a>  > galeria
+Ferramentas > <a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><?php echo $Ferramenta_principal?></a> > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><?php echo $Titulo_banco?></a>  > galeria
 
 <div class="Box box_Paginas">	
 
@@ -142,8 +142,8 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?=$Titulo_banco?></li></a>
-          		<a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?=$Ferramenta_principal?></li></a>
+                <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?php echo $Titulo_banco?></li></a>
+          		<a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?php echo $Ferramenta_principal?></li></a>
 				
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
@@ -155,7 +155,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 <div class="Body_box">
 
 
-<form  action="?pg=<?=$Pagina?>&cad=1&id=<?=$_GET[\'id\']?>&Id_Princ=<?=$id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
+<form  action="?pg=<?php echo $Pagina?>&cad=1&id=<?php echo $_GET[\'id\']?>&Id_Princ=<?php echo $id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
 
 
 <label>Imagens:</label><br />
@@ -191,16 +191,16 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 	
 ?>
 <br /><br />
-<form  action="?pg=<?=$Pagina?>&cad=1&id=<?=$_GET[\'id\']?>&Id_Princ=<?=$id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
+<form  action="?pg=<?php echo $Pagina?>&cad=1&id=<?php echo $_GET[\'id\']?>&Id_Princ=<?php echo $id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
 
-<input type="hidden" name="id_edit" id="id_edit" value="<?=$retornaEdit[\'id\']?>"/>
+<input type="hidden" name="id_edit" id="id_edit" value="<?php echo $retornaEdit[\'id\']?>"/>
 
 
     <label>Titulo:</label><br />
-    <input type="text" name="titulo" id="titulo" value="<?=$retornaEdit[\'titulo\']?>" class="mws-textinput medium"/><br />
+    <input type="text" name="titulo" id="titulo" value="<?php echo $retornaEdit[\'titulo\']?>" class="mws-textinput medium"/><br />
     
     <label>Texto:</label><br />
-    <textarea name="texto" id="texto"  class="mws-textinput" style="width:100%;" rows="10"/><?=$retornaEdit[\'texto\']?></textarea><br />
+    <textarea name="texto" id="texto"  class="mws-textinput" style="width:100%;" rows="10"/><?php echo $retornaEdit[\'texto\']?></textarea><br />
     
     <input type="submit" name="editar" value="Salvar alteração" class="Bt-blue" />
                        
@@ -259,16 +259,16 @@ while($retorna = mysql_fetch_array($sql)) {
 			
 			?>
             
-            <? if ($retorna[\'capa\'] == \'ON\') { ?>
+            <?php if ($retorna[\'capa\'] == \'ON\') { ?>
 
-            <a href="?pg=../Sistema/Includes/capa&banco=<?=$Banco?>&status=<?=$retorna[\'capa\']?>&pagina=<?=$Pagina?>&id_gal=<?=$retorna[\'id\']?>&id=<?=$id_Gal?>&Id_Princ=<?=$id_Principal?>">
+            <a href="?pg=../Sistema/Includes/capa&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'capa\']?>&pagina=<?php echo $Pagina?>&id_gal=<?php echo $retorna[\'id\']?>&id=<?php echo $id_Gal?>&Id_Princ=<?php echo $id_Principal?>">
 				<div class=\'bt_imagemBox bt_capa\'>Definir Capa</div>
 			</a>
-            <? } else { ?>
-            <a href="?pg=../Sistema/Includes/capa&banco=<?=$Banco?>&status=<?=$retorna[\'capa\']?>&pagina=<?=$Pagina?>&id_gal=<?=$retorna[\'id\']?>&id=<?=$id_Gal?>&Id_Princ=<?=$id_Principal?>" >
+            <?php } else { ?>
+            <a href="?pg=../Sistema/Includes/capa&banco=<?php echo $Banco?>&status=<?php echo $retorna[\'capa\']?>&pagina=<?php echo $Pagina?>&id_gal=<?php echo $retorna[\'id\']?>&id=<?php echo $id_Gal?>&Id_Princ=<?php echo $id_Principal?>" >
 				<div class=\'bt_imagemBox bt_capa_off\'>Definir Capa</div>
 			</a>
-            <? } ?>
+            <?php } ?>
 			
 			
 			

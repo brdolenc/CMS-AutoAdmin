@@ -1,1 +1,1 @@
-<? echo urlLink(7); ?>
+<?php echo urlLink(7); ?>

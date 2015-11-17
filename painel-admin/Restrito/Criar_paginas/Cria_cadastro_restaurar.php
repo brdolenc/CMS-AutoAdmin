@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
@@ -15,7 +15,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 ?>
 
 
-<? 
+<?php 
 
 require_once( "Sistema/Classes/alertas.inc.php"); 
 require_once( "Sistema/Classes/PermaLink.inc.php"); 
@@ -190,14 +190,14 @@ if($cad) {
 	
 $Conteudo_Pagina_Cad .= '
 
-Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>"><?=$Nome_primitivo?></a> > cadastro
+Ferramentas > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>"><?php echo $Nome_primitivo?></a> > cadastro
 		
 
 <div class="Box box_Paginas">	
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Nome_Pagina_Principal?>/<?=$Nome_Pagina_Principal?>"><li>Pagina Principal</li></a>
+                <a href="?pg=paginas/<?php echo $Nome_Pagina_Principal?>/<?php echo $Nome_Pagina_Principal?>"><li>Pagina Principal</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
             
@@ -207,12 +207,12 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>"><?=$No
 </div>
 <div class="Body_box">
                     	
-<form action="index.php?pg=paginas/<?=$Nome_Pagina_Principal?>/<?=$Nome_Pagina?>&cad=ok" class="mws-form" method="post" enctype="multipart/form-data">
+<form action="index.php?pg=paginas/<?php echo $Nome_Pagina_Principal?>/<?php echo $Nome_Pagina?>&cad=ok" class="mws-form" method="post" enctype="multipart/form-data">
 
 '; ?>
 
                        
-                        <? 
+                        <?php 
 						
 						 $Conteudo_Pagina_Cad .= false;
 						 

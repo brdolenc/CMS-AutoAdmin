@@ -1,5 +1,5 @@
 
-<? 
+<?php 
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
@@ -45,11 +45,11 @@ if(empty($_GET['PR'])) {
     
          
            
-<? } ?> 
+<?php } ?> 
          
  
          
-<? if(isset($_GET['PR'])) { 
+<?php if(isset($_GET['PR'])) { 
 
 	if(VerificaTables(strtolower($_POST['Nome_tabela']))) {
 		
@@ -77,12 +77,12 @@ if(empty($_GET['PR'])) {
         </div>    
         <div class="Body_box" style="overflow: auto;">
             <form action="?pg=Contrutor/Cria_tabelas" method="post" name="cadastro" id="FormCampos"  enctype="multipart/form-data">
-                       <input name="Nome_tabela" id="Nome_tabela" value="<?=strtolower($_POST['Nome_tabela'])?>" type="hidden" />
-                       <input name="galeria" id="galeria" value="<?=$_POST['galeria']?>" type="hidden" />
-                       <input name="upload" id="upload" value="<?=$_POST['upload']?>" type="hidden" />
-                       <input name="sistema_comente" id="sistema_comente" value="<?=$_POST['sistema_comente']?>" type="hidden" />
-                       <input name="categorias" id="categorias" value="<?=$_POST['categorias']?>" type="hidden" />
-                       <input name="post_destaque" id="post_destaque" value="<?=$_POST['post_destaque']?>" type="hidden" />
+                       <input name="Nome_tabela" id="Nome_tabela" value="<?php echo strtolower($_POST['Nome_tabela'])?>" type="hidden" />
+                       <input name="galeria" id="galeria" value="<?php echo $_POST['galeria']?>" type="hidden" />
+                       <input name="upload" id="upload" value="<?php echo $_POST['upload']?>" type="hidden" />
+                       <input name="sistema_comente" id="sistema_comente" value="<?php echo $_POST['sistema_comente']?>" type="hidden" />
+                       <input name="categorias" id="categorias" value="<?php echo $_POST['categorias']?>" type="hidden" />
+                       <input name="post_destaque" id="post_destaque" value="<?php echo $_POST['post_destaque']?>" type="hidden" />
                        <input name="validar" id="validar" value="EXE" type="hidden" />
                        <input name="quantidade" id="quantidade" value="1" type="hidden" />
                        <div  style="height:auto;"></div>
@@ -145,7 +145,7 @@ if(empty($_GET['PR'])) {
 </div>
                       
              
-<? } 
+<?php } 
 
 
 }else{

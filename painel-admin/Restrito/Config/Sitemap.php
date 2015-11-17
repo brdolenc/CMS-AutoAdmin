@@ -1,5 +1,5 @@
 
-<? 
+<?php 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
 
@@ -173,7 +173,7 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
     </form>
 
 
-<? 
+<?php 
 
 	}else{
 		
@@ -190,16 +190,16 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
 <div class="Body_box">
 
 	<form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="Id_edit" id="Id_edit" value="<?=$retornaEdit['id']?>"  />
+        <input type="hidden" name="Id_edit" id="Id_edit" value="<?php echo $retornaEdit['id']?>"  />
             
     	<label>Descrição</label><br />
-        <input type="text" name="desc" id="desc"  style="width: 500px;" value="<?=$retornaEdit['descricao']?>"/><br /><br />
+        <input type="text" name="desc" id="desc"  style="width: 500px;" value="<?php echo $retornaEdit['descricao']?>"/><br /><br />
     
     	<label>Url</label><br />
-        <input type="text" name="url" id="url"  style="width: 650px;" value="<?=$retornaEdit['url']?>"/><br /><br />
+        <input type="text" name="url" id="url"  style="width: 650px;" value="<?php echo $retornaEdit['url']?>"/><br /><br />
         
         <label>Prioridade</label> <br />
-        <input type="text" name="prioridade" id="prioridade" maxlength="1"  style="width: 40px;" onkeyup="validar_prioridade(this,'num');" value="<?=str_replace('0.','',$retornaEdit['prioridade'])?>"/><br /><br />
+        <input type="text" name="prioridade" id="prioridade" maxlength="1"  style="width: 40px;" onkeyup="validar_prioridade(this,'num');" value="<?php echo str_replace('0.','',$retornaEdit['prioridade'])?>"/><br /><br />
         
        
         
@@ -210,7 +210,7 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
 
 
 
-<? } ?>
+<?php } ?>
 
 </div>
 </div> 
@@ -257,7 +257,7 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
                             ?>
                             
                             
-                            <? if($Cont == 0) { ?>
+                            <?php if($Cont == 0) { ?>
                         	
                             <tr>
                             	<td align="left" valign="middle"></td>
@@ -268,11 +268,11 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
                                 <td></td>
                           </tr>
                             
-                         <? 
+                         <?php 
 						 
 						 } else { ?>
 							
-							<tr <?=$CorLinha?>>
+							<tr <?php echo $CorLinha?>>
                             
                             <td align="left" valign="middle">
                              		<?php
@@ -296,8 +296,8 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
 							 
 							 <td align="left" valign="middle">
                              
-                             		<a href="?pg=Config/Sitemap&edit=<?=$retorna['id']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-                                    <a href="?pg=Config/Sitemap&ex=<?=$retorna['id']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                             		<a href="?pg=Config/Sitemap&edit=<?php echo $retorna['id']?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+                                    <a href="?pg=Config/Sitemap&ex=<?php echo $retorna['id']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
 
                             	
                              </td>
@@ -307,7 +307,7 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
 							</tr>
                             
                             
-                            <? } }?>
+                            <?php } }?>
                             
                             
                         
@@ -379,7 +379,7 @@ if(fwrite($CriarMaps,$ConteudoSitamap)){
 
              
              
-<? 
+<?php 
 
 }
 

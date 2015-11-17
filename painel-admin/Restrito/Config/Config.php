@@ -1,5 +1,5 @@
 
-<? 
+<?php 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
 	
@@ -160,7 +160,7 @@ $contentRobot .= 'Sitemap: '.$url_site.'/Sitemap.xml';
 		if($retorna['arquivo']!=''){
 		if(file_exists($PastaArqs.$retorna['arquivo'])) { ?>
         <label>Logo atual</label><br />
-        <img src="<?=$PastaArqs.$retorna['arquivo']?>" width="120">
+        <img src="<?php echo $PastaArqs.$retorna['arquivo']?>" width="120">
         <?php } } ?>
         
     </form>
@@ -170,7 +170,7 @@ $contentRobot .= 'Sitemap: '.$url_site.'/Sitemap.xml';
 	<form action="" method="post" enctype="multipart/form-data">
     
     	<label>Titulo Site</label><br />
-        <input type="text" name="titulo_site" id="titulo_site" value="<?=$retorna['titulo_site']?>"  style="width: 300px;" /><br /><br />
+        <input type="text" name="titulo_site" id="titulo_site" value="<?php echo $retorna['titulo_site']?>"  style="width: 300px;" /><br /><br />
         
         
         <?php
@@ -180,32 +180,32 @@ $contentRobot .= 'Sitemap: '.$url_site.'/Sitemap.xml';
 		?>
     
     	<label>Url Site</label><br />
-        <input type="text" name="url_site" id="url_site"  value="<?=$retorna['url_site']?>" style="width: 500px;" /><br /><br />
+        <input type="text" name="url_site" id="url_site"  value="<?php echo $retorna['url_site']?>" style="width: 500px;" /><br /><br />
         
         <label>Url Painel Administrador</label> <br />
-        <input type="text" name="url_admin" id="url_admin" value="<?=$retorna['urlGeral']?>"  style="width: 500px;" /><br /><br />
+        <input type="text" name="url_admin" id="url_admin" value="<?php echo $retorna['urlGeral']?>"  style="width: 500px;" /><br /><br />
         
         
-        <? } else { ?>
+        <?php } else { ?>
         
         <label>Url Site</label><br />
-        <input type="text" value="<?=$retorna['url_site']?>" disabled="disabled" style="width: 500px;" /><br /><br />
-         <input type="hidden" name="url_site" id="url_site"  value="<?=$retorna['url_site']?>"/>
+        <input type="text" value="<?php echo $retorna['url_site']?>" disabled="disabled" style="width: 500px;" /><br /><br />
+         <input type="hidden" name="url_site" id="url_site"  value="<?php echo $retorna['url_site']?>"/>
         
         <label>Url Administrador</label> <br />
-        <input type="text"  value="<?=$retorna['urlGeral']?>" disabled="disabled"  style="width: 500px;" /><br /><br />
-        <input type="hidden" name="url_admin" id="url_admin" value="<?=$retorna['urlGeral']?>"/>
+        <input type="text"  value="<?php echo $retorna['urlGeral']?>" disabled="disabled"  style="width: 500px;" /><br /><br />
+        <input type="hidden" name="url_admin" id="url_admin" value="<?php echo $retorna['urlGeral']?>"/>
         
-        <? } ?>
+        <?php } ?>
         
          <label>E-mail</label> <br />
-        <input type="text" name="email" id="email" value="<?=$retorna['email']?>"  style="width: 300px;" /><br /><br />
+        <input type="text" name="email" id="email" value="<?php echo $retorna['email']?>"  style="width: 300px;" /><br /><br />
         
         <label>Frase buscadores</label><br />
-        <input type="text" name="frase_busca" id="frase_busca" value="<?=$retorna['frase']?>" style="width: 650px;"b/><br /><br />
+        <input type="text" name="frase_busca" id="frase_busca" value="<?php echo $retorna['frase']?>" style="width: 650px;"b/><br /><br />
         
         <label>Palavras chaves ( separadas por virgula )</label><br />
-        <input type="text" name="palavras_busca" id="palavras_busca" onkeyup="validar_palavras(this,'caracter');" value="<?=$retorna['palavras']?>" style="width: 800px;"b/><br /><br />
+        <input type="text" name="palavras_busca" id="palavras_busca" onkeyup="validar_palavras(this,'caracter');" value="<?php echo $retorna['palavras']?>" style="width: 800px;"b/><br /><br />
         
                 
         <input type="submit" value="Editar Configurações" name="submit" class="bt-blue"/>
@@ -221,7 +221,7 @@ $contentRobot .= 'Sitemap: '.$url_site.'/Sitemap.xml';
 
 
              
-<? 
+<?php 
 
 }else{
 	header('location: ../../login.php');

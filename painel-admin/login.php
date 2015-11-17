@@ -1,6 +1,7 @@
 <?php
 
 ob_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 
 if(isset($_COOKIE['idLogin']) and isset($_COOKIE['UserLogin']) and isset($_COOKIE['NivelLogin'])) { 

@@ -13,7 +13,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 ?>
 
-<? require_once( "Sistema/Classes/alertas.inc.php"); ?>
+<?php require_once( "Sistema/Classes/alertas.inc.php"); ?>
 
 <?php 
 
@@ -87,15 +87,15 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 ?>
 
-Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><?=$Ferramenta_principal?></a> > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><?=$Titulo_banco?></a>  > upload
+Ferramentas > <a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><?php echo $Ferramenta_principal?></a> > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><?php echo $Titulo_banco?></a>  > upload
 
 <div class="Box box_Paginas">	
 
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?=$Titulo_banco?></li></a>
-          		<a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?=$Ferramenta_principal?></li></a>
+                <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?php echo $Titulo_banco?></li></a>
+          		<a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?php echo $Ferramenta_principal?></li></a>
 				
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
@@ -106,7 +106,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 <div class="Body_box">  
             
 
-<form  action="?pg=<?=$Pagina?>&cad=1&id=<?=$_GET[\'id\']?>&Id_Princ=<?=$id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
+<form  action="?pg=<?php echo $Pagina?>&cad=1&id=<?php echo $_GET[\'id\']?>&Id_Princ=<?php echo $id_Principal?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
 
 
 <label>Arquivo:</label><br />
@@ -158,18 +158,18 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
                             
                             
                             
-                            <tr <?=$CorLinha?>>
+                            <tr <?php echo $CorLinha?>>
                             
                             <td>
                              
-                             <a href="<?=$UrlGeral[0]?><?=$PastaArqs.$Foto?>" target="_blank"><?=$UrlGeral[0]?><?=$PastaArqs.$Foto?></a>
+                             <a href="<?php echo $UrlGeral[0]?><?php echo $PastaArqs.$Foto?>" target="_blank"><?php echo $UrlGeral[0]?><?php echo $PastaArqs.$Foto?></a>
                              
                              </td>
                             
                             
                             <td>
                             
-                            <a href="?pg=<?=$Pagina?>&id=<?=$_GET[\'id\']?>&idEx=<?=$retorna[\'id\']?>&Id_Princ=<?=$id_Principal?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                            <a href="?pg=<?php echo $Pagina?>&id=<?php echo $_GET[\'id\']?>&idEx=<?php echo $retorna[\'id\']?>&Id_Princ=<?php echo $id_Principal?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
 							
                             </td>
                            
@@ -178,7 +178,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
                             </tr>
                             
                             
-                            <? } ?>
+                            <?php } ?>
                             
                             
                         

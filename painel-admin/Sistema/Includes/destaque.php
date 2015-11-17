@@ -1,5 +1,6 @@
 <?php
 ob_start();
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {

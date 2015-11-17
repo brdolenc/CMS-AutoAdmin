@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
@@ -13,7 +13,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	?>
 
 
-<? 
+<?php 
 
 require_once( "Sistema/Classes/alertas.inc.php"); 
 require_once( "Sistema/Classes/PermaLink.inc.php"); 
@@ -187,7 +187,7 @@ if($cad) {
 $Conteudo_Pagina_Cad .= '
 
 
-Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><?=$Ferramenta_principal?></a> > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><?=$Titulo_banco?></a>  > cadastro
+Ferramentas > <a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><?php echo $Ferramenta_principal?></a> > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><?php echo $Titulo_banco?></a>  > cadastro
 		
 
 <div class="Box box_Paginas">	
@@ -196,8 +196,8 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?=$Titulo_banco?></li></a>
-          		<a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?=$Ferramenta_principal?></li></a>
+                <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?php echo $Titulo_banco?></li></a>
+          		<a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?php echo $Ferramenta_principal?></li></a>
 				
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
@@ -210,12 +210,12 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 
 
                     	
-                     <form action="index.php?pg=paginas/<?=$Nome_Pagina_Principal?>/<?=$Nome_Pagina?>&cad=ok&Id_Princ=<?=$id_Principal?>" class="mws-form" method="post" enctype="multipart/form-data">
+                     <form action="index.php?pg=paginas/<?php echo $Nome_Pagina_Principal?>/<?php echo $Nome_Pagina?>&cad=ok&Id_Princ=<?php echo $id_Principal?>" class="mws-form" method="post" enctype="multipart/form-data">
                           
 '; ?>
 
                        
-                        <? 
+                        <?php 
 						
 						 $Conteudo_Pagina_Cad .= false;
 						 

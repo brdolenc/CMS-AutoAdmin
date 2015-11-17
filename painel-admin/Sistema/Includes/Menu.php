@@ -16,7 +16,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
 				
 			 ?>
             <a href="?pg=Config/Sitemap" class="LkBranco"><li class="MenuSub">Sitemap</li></a>
-             <? } ?>
+             <?php } ?>
             <a href="?pg=Config/Usuarios" class="LkBranco"><li class="MenuSub">Usuários</li></a>
         </ul>
     </li></a>
@@ -36,7 +36,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
         </ul>
     </li></a>
     
-    <? } ?>
+    <?php } ?>
     
     
     <a href="#"><li class="icon ico-paginas">

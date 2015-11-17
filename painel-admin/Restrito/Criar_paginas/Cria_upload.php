@@ -13,7 +13,7 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 	
 	?>
 
-<? require_once( "Sistema/Classes/alertas.inc.php"); ?>
+<?php require_once( "Sistema/Classes/alertas.inc.php"); ?>
 
 
 
@@ -82,11 +82,11 @@ if(isset($_SESSION[\'idLogin\']) and isset($_SESSION[\'UserLogin\']) and isset($
 
 <div class="Box box_Paginas">
 
-Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Titulo_banco.'</a> > upload	
+Ferramentas > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>">'.$Titulo_banco.'</a> > upload	
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=<?=$Pagina_home?>"><li>Pagina Principal</li></a>
+                <a href="?pg=<?php echo $Pagina_home?>"><li>Pagina Principal</li></a>
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
 </ul>
             
@@ -98,7 +98,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Tit
 
 
 
-<form  action="?pg=<?=$Pagina?>&id=<?=$_GET[\'id\']?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
+<form  action="?pg=<?php echo $Pagina?>&id=<?php echo $_GET[\'id\']?>" enctype="multipart/form-data" name="galeria" class="mws-form" method="post">
 
 
 
@@ -152,18 +152,18 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Tit
                             
                             
                             
-                            <tr <?=$CorLinha?>>
+                            <tr <?php echo $CorLinha?>>
                             
                             <td>
                              
-                            <a href="<?=$UrlGeral[0]?><?=$PastaArqs.$Foto?>" target="_blank"><?=$UrlGeral[0]?><?=$PastaArqs.$Foto?></a>
+                            <a href="<?php echo $UrlGeral[0]?><?php echo $PastaArqs.$Foto?>" target="_blank"><?php echo $UrlGeral[0]?><?php echo $PastaArqs.$Foto?></a>
                              
                             </td>
                             
                             
                             <td>
                             
-                            <a href="?pg=<?=$Pagina?>&id=<?=$_GET[\'id\']?>&idEx=<?=$retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                            <a href="?pg=<?php echo $Pagina?>&id=<?php echo $_GET[\'id\']?>&idEx=<?php echo $retorna[\'id\']?>" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
 
 							
                             </td>
@@ -173,7 +173,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>">'.$Tit
                             </tr>
                             
                             
-                            <? } ?>
+                            <?php } ?>
                             
                             
                         

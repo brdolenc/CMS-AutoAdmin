@@ -5,18 +5,18 @@
 <title>Painel Adm V2</title>
 </head>
 
-<link type="text/css" href="<?=$UrlGeral[0]?>Arquivos/css/reset.css" rel="stylesheet" />
-<link type="text/css" href="<?=$UrlGeral[0]?>Arquivos/css/layout.css" rel="stylesheet" />
-<link rel="stylesheet" href="<?=$UrlGeral[0]?>Arquivos/css/jquery-ui.css" />
+<link type="text/css" href="<?php echo $UrlGeral[0]?>Arquivos/css/reset.css" rel="stylesheet" />
+<link type="text/css" href="<?php echo $UrlGeral[0]?>Arquivos/css/layout.css" rel="stylesheet" />
+<link rel="stylesheet" href="<?php echo $UrlGeral[0]?>Arquivos/css/jquery-ui.css" />
 
 
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/jquery-1.7.1.min.js"></script>	
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/jquery-ui.js"></script>	
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/layout.js"></script>
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/functions.js"></script>
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/ajax.js"></script>
-<script type="text/javascript" src="<?=$UrlGeral[0]?>Arquivos/js/nicEdit.js"></script>
-<script type='text/javascript' src='<?=$UrlGeral[0]?>Arquivos/js/jquery.maskMoney.js'></script>
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/jquery-1.7.1.min.js"></script>	
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/jquery-ui.js"></script>	
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/layout.js"></script>
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/functions.js"></script>
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/ajax.js"></script>
+<script type="text/javascript" src="<?php echo $UrlGeral[0]?>Arquivos/js/nicEdit.js"></script>
+<script type='text/javascript' src='<?php echo $UrlGeral[0]?>Arquivos/js/jquery.maskMoney.js'></script>
 
 <script type="text/javascript">
 	bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
@@ -32,7 +32,7 @@
 
 
 
-<script type='text/javascript' src='<?=$UrlGeral[0]?>Arquivos/js/jquery.mask.js'></script>
+<script type='text/javascript' src='<?php echo $UrlGeral[0]?>Arquivos/js/jquery.mask.js'></script>
 
 
 <body>

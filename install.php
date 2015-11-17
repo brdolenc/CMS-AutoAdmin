@@ -1,5 +1,6 @@
 <?php
-
+	
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	if(isset($_POST['submit'])) {
 				
 		$servidor  = $_POST['servidor'];
@@ -287,7 +288,7 @@ div.atencao { background-color:#faffd0; border:1px dashed #d6cb19;  color:#000; 
 
 	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="border:0;">
           <tr style="border:0;">
-            <td style="padding:0;"><?=$ErroA?><?=$ErroB?><?=$ErroD?><?=$ErroF?><?=$ErroG?><?=$ErroH?></td>
+            <td style="padding:0;"><?php echo $ErroA; ?><?php echo $ErroB; ?><?php echo $ErroD; ?><?php echo $ErroF; ?><?php echo $ErroG; ?><?php echo $ErroH; ?></td>
           </tr>
         </table>
 
@@ -298,15 +299,15 @@ div.atencao { background-color:#faffd0; border:1px dashed #d6cb19;  color:#000; 
           </tr>
           <tr>
             <td width="113" align="left" valign="middle">Servidor</td>
-            <td width="487" align="left" valign="middle"><input type="text" name="servidor" value="<?=$_POST['servidor']?>" /></td>
+            <td width="487" align="left" valign="middle"><input type="text" name="servidor" value="<?php echo $_POST['servidor']; ?>" /></td>
           </tr>
           <tr>
             <td align="left" valign="middle">Banco</td>
-            <td align="left" valign="middle"><input type="text" name="banco"  value="<?=$_POST['banco']?>"/></td>
+            <td align="left" valign="middle"><input type="text" name="banco"  value="<?php echo $_POST['banco']; ?>"/></td>
           </tr>
           <tr>
             <td align="left" valign="middle">Usuário</td>
-            <td align="left" valign="middle"><input type="text" name="usuario"  value="<?=$_POST['usuario']?>"/></td>
+            <td align="left" valign="middle"><input type="text" name="usuario"  value="<?php echo $_POST['usuario']; ?>"/></td>
           </tr>
           <tr>
             <td align="left" valign="middle">Senha</td>
@@ -326,7 +327,7 @@ div.atencao { background-color:#faffd0; border:1px dashed #d6cb19;  color:#000; 
           </tr>
           <tr>
             <td width="113" align="left" valign="middle">Url Site</td>
-            <td width="487" align="left" valign="middle"><input type="text" name="url_site"  value="<?=$_POST['url_site']?>"/></td>
+            <td width="487" align="left" valign="middle"><input type="text" name="url_site"  value="<?php echo $_POST['url_site']; ?>"/></td>
           </tr>
         </table>
         
@@ -334,7 +335,7 @@ div.atencao { background-color:#faffd0; border:1px dashed #d6cb19;  color:#000; 
         
         <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" style="border:0;">
           <tr style="border:0;">
-            <td style="padding:0;"><?=$ErroC?></td>
+            <td style="padding:0;"><?php echo $ErroC; ?></td>
           </tr>
         </table>
         
@@ -344,7 +345,7 @@ div.atencao { background-color:#faffd0; border:1px dashed #d6cb19;  color:#000; 
           </tr>
           <tr>
             <td width="113" align="left" valign="middle">Login</td>
-            <td width="487" align="left" valign="middle"><input type="text" name="login_admin"  value="<?=$_POST['login_admin']?>"/></td>
+            <td width="487" align="left" valign="middle"><input type="text" name="login_admin"  value="<?php echo $_POST['login_admin']; ?>"/></td>
           </tr>
           <tr>
             <td align="left" valign="middle">Senha</td>

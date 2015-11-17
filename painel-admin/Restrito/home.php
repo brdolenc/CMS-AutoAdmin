@@ -21,7 +21,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
                    
                    <ul class="Menu-acoes">
                         <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>
-                        <a href="#"  onclick="window.location.reload()"><li><input type="text" name="contador" id="resultados_table" class="edite_titulos" value="<?=$contador?>">resultado(s)</li></a>		
+                        <a href="#"  onclick="window.location.reload()"><li><input type="text" name="contador" id="resultados_table" class="edite_titulos" value="<?php echo $contador?>">resultado(s)</li></a>		
             	   </ul>
                    
                   
@@ -41,7 +41,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
 						
                         <tbody>
                         
-                        <? if($contador == 0) { ?>
+                        <?php if($contador == 0) { ?>
                         	
                             <tr>
                             	<td align="left" valign="middle"></td>
@@ -52,7 +52,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
                                 <td></td>
                           </tr>
                             
-                         <? 
+                         <?php 
 						 
 						 } else { 
 						 
@@ -61,9 +61,9 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
 						 
 						 ?>   
 							
-							<tr <?=$CorLinha?>>
+							<tr <?php echo $CorLinha?>>
 								<td align="left" valign="middle">
-									<?=$Retorna['nomeLogin']?>
+									<?php echo $Retorna['nomeLogin']?>
                                 </td>
                                 
                                 <td align="left" valign="middle">
@@ -79,11 +79,11 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
                                 </td>
                                 
                                 <td align="left" valign="middle">
-                                	<?=str_replace("tbl_","",$Retorna['tabelaFerramenta'])?>
+                                	<?php echo str_replace("tbl_","",$Retorna['tabelaFerramenta'])?>
                                 </td>
                                 
                                 <td align="left" valign="middle">
-                                	<?=$Retorna['tituloAcao']?>
+                                	<?php echo $Retorna['tituloAcao']?>
                                 </td>
                                 <td align="left" valign="middle">
                                 	<?php echo substr($Retorna['data_acao'],8,2).'/'.substr($Retorna['data_acao'],5,2).'/'.substr($Retorna['data_acao'],0,4).' às '.substr($Retorna['data_acao'],11,5);?>
@@ -98,11 +98,11 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
 											$LinkFinal = $Retorna['LinkFerramenta'].'_editar&id='.$Retorna['id_ferramenta'];
 										}
 									?>
-                                	<a href="<?=$LinkFinal?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+                                	<a href="<?php echo $LinkFinal?>" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
                               </td>
 							</tr> 
 
-                        <? } } ?>    
+                        <?php } } ?>    
 
                             
                         

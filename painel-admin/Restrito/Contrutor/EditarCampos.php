@@ -97,7 +97,7 @@ if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SES
 		$CampoP_Cad     =  str_replace('!@','"',$_POST['CampoP_Cad']);
 		
 		$Campo = str_replace('!@','"',$_POST['Campo']);
-		$Campo = str_replace('(@@)','<?=',$Campo);
+		$Campo = str_replace('(@@)','<?php echo ',$Campo);
    		$Campo = str_replace('(@)','?>',$Campo);
   		$Campo = str_replace("@!","'",$Campo);
    		$Campo = str_replace('!@','"',$Campo);
@@ -214,21 +214,21 @@ function GerarCodigo() {
 	
 		for(xFor=0;xFor<=ValoresQuant;xFor++){
 		
-			OptionsSelCad += '<option value="'+ValoresInput[xFor]+'"'+"<@@? if('"+ValoresInput[xFor]+"' == $retorna['<?=$NomeCampo?>']) {echo 'selected=selected';} ?>"+' >'+ValoresInput[xFor]+'</option>';
+			OptionsSelCad += '<option value="'+ValoresInput[xFor]+'"'+"<@@? if('"+ValoresInput[xFor]+"' == $retorna['<?php echo $NomeCampo?>']) {echo 'selected=selected';} ?>"+' >'+ValoresInput[xFor]+'</option>';
 			
 			OptionsSel += '<option value="'+ValoresInput[xFor]+'" >'+ValoresInput[xFor]+'</option>';
 			
 		}
 		for(xFor=0;xFor<=ValoresQuant;xFor++){
 		
-OptionsCheckCad += '<input name="'+NomeInput+'[]" id="'+NomeInput+'" type="checkbox" value="'+ValoresInput[xFor]+'"'+"<@@? Testar('"+ValoresInput[xFor]+"',$Nome_Banco,$_GET['id'],'<?=$NomeDocampo?>'); ?> />"+ValoresInput[xFor]+'';
+OptionsCheckCad += '<input name="'+NomeInput+'[]" id="'+NomeInput+'" type="checkbox" value="'+ValoresInput[xFor]+'"'+"<@@? Testar('"+ValoresInput[xFor]+"',$Nome_Banco,$_GET['id'],'<?php echo $NomeDocampo?>'); ?> />"+ValoresInput[xFor]+'';
 			
 			OptionsCheck += '<input name="'+NomeInput+'[]" id="'+NomeInput+'" type="checkbox" value="'+ValoresInput[xFor]+'" />'+ValoresInput[xFor]+'';
 			
 		}
 		for(xFor=0;xFor<=ValoresQuant;xFor++){
 		
-			OptionsRadioCad += '<input name="'+NomeInput+'" id="'+NomeInput+'" type="radio" value="'+ValoresInput[xFor]+'"'+"<@@? if('"+ValoresInput[xFor]+"' == $retorna['<?=$NomeCampo?>']) {echo 'checked=checked';} ?> />"+ValoresInput[xFor]+'';
+			OptionsRadioCad += '<input name="'+NomeInput+'" id="'+NomeInput+'" type="radio" value="'+ValoresInput[xFor]+'"'+"<@@? if('"+ValoresInput[xFor]+"' == $retorna['<?php echo $NomeCampo?>']) {echo 'checked=checked';} ?> />"+ValoresInput[xFor]+'';
 			
 			OptionsRadio += '<input name="'+NomeInput+'" id="'+NomeInput+'" type="radio" value="'+ValoresInput[xFor]+'" />'+ValoresInput[xFor]+'';
 			
@@ -330,10 +330,10 @@ OptionsRadioCad = '';
 
 
 
-   <input type="text" name="NomeCampo" id="NomeCampo" value="<?=$NomeCampo?>"  hidden="hidden"/>
-   <input type="text" name="Ferramenta" id="Ferramenta" value="<?=$Ferramenta?>"  hidden="hidden"/>
-   <input type="text" name="Pagina" id="Pagina" value="<?=$Pagina?>"  hidden="hidden"/>
-   <input type="text" name="NomeDocampo" id="NomeDocampo" value="<?=$NomeDocampo?>"  hidden="hidden"/>
+   <input type="text" name="NomeCampo" id="NomeCampo" value="<?php echo $NomeCampo?>"  hidden="hidden"/>
+   <input type="text" name="Ferramenta" id="Ferramenta" value="<?php echo $Ferramenta?>"  hidden="hidden"/>
+   <input type="text" name="Pagina" id="Pagina" value="<?php echo $Pagina?>"  hidden="hidden"/>
+   <input type="text" name="NomeDocampo" id="NomeDocampo" value="<?php echo $NomeDocampo?>"  hidden="hidden"/>
    
    
    <?php
@@ -343,12 +343,12 @@ OptionsRadioCad = '';
    
    ?>
    
-   <input type="text" name="CampoP_Cad" id="CampoP_Cad" value="<?=$CampoP_Cad?>"  hidden="hidden"/>
+   <input type="text" name="CampoP_Cad" id="CampoP_Cad" value="<?php echo $CampoP_Cad?>"  hidden="hidden"/>
    
 
    <?php
    
-   $Campo = str_replace('<?=','(@@)',$Campo);
+   $Campo = str_replace('<?php echo ','(@@)',$Campo);
    $Campo = str_replace('?>','(@)',$Campo);
    $Campo = str_replace("'","!@",$Campo);
    $Campo = str_replace('"','!@',$Campo);
@@ -356,7 +356,7 @@ OptionsRadioCad = '';
    
    ?>
    
-  <input type="text" name="Campo" id="Campo" value="<?=$Campo?>"  hidden="hidden"/>
+  <input type="text" name="Campo" id="Campo" value="<?php echo $Campo?>"  hidden="hidden"/>
 
 
 </form>

@@ -1,6 +1,6 @@
 
 
-<? 
+<?php 
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
@@ -174,7 +174,7 @@ function confirmAction(PaginaRest){
                         <tbody>
                         
                         
-                        <? if($contador == 0) { ?>
+                        <?php if($contador == 0) { ?>
                           <tr>
                             	<td align="left" valign="middle">Não existe cadastros!</td>
                                 <td align="left" valign="middle"></td>
@@ -189,25 +189,25 @@ function confirmAction(PaginaRest){
 								 if(($xLinhasCor++)%2 == 0 ) { $CorLinha = 'class="tdColor"'; }else{ $CorLinha = "";  };
 						
 						?>
-							<tr <?=$CorLinha?>>
-                                    <td><?=$Retorna_ferr['nome_ferramenta']?></td>
+							<tr <?php echo $CorLinha?>>
+                                    <td><?php echo $Retorna_ferr['nome_ferramenta']?></td>
                                     <td align="right">
                                     
-                         <? if ($Retorna_ferr['status'] == 'ON') { ?>							
-								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?=$Retorna_ferr['status']?>&pagina=Contrutor/EditarFerramentas&id=<?=$Retorna_ferr['id']?>" target="_self"><font color="#009900" >Desinstalar</font> | </a>
-                            <? } else { ?>
-								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?=$Retorna_ferr['status']?>&pagina=Contrutor/EditarFerramentas&id=<?=$Retorna_ferr['id']?>" target="_self"><font color="#333333">Instalar</font> | </a>
-                            <? } ?>
+                         <?php if ($Retorna_ferr['status'] == 'ON') { ?>							
+								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?php echo $Retorna_ferr['status']?>&pagina=Contrutor/EditarFerramentas&id=<?php echo $Retorna_ferr['id']?>" target="_self"><font color="#009900" >Desinstalar</font> | </a>
+                            <?php } else { ?>
+								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?php echo $Retorna_ferr['status']?>&pagina=Contrutor/EditarFerramentas&id=<?php echo $Retorna_ferr['id']?>" target="_self"><font color="#333333">Instalar</font> | </a>
+                            <?php } ?>
                                  
-                                  <a href="#" onclick="confirmAction('<?=$Retorna_ferr['nome_ferramenta']?>');"><font color="#333333" >Restaurar</font> | </a>
+                                  <a href="#" onclick="confirmAction('<?php echo $Retorna_ferr['nome_ferramenta']?>');"><font color="#333333" >Restaurar</font> | </a>
                                   
                                   
                                   
-                                  <? if ($Retorna_ferr['status'] == 'ON') { ?>							
-								 <a href="?pg=paginas/<?=$Retorna_ferr['nome_ferramenta']?>/<?=$Retorna_ferr['nome_ferramenta']?>"><font color="#333333" >Ver</font> | </a>
-                            <? } else { ?>
+                                  <?php if ($Retorna_ferr['status'] == 'ON') { ?>							
+								 <a href="?pg=paginas/<?php echo $Retorna_ferr['nome_ferramenta']?>/<?php echo $Retorna_ferr['nome_ferramenta']?>"><font color="#333333" >Ver</font> | </a>
+                            <?php } else { ?>
 								
-                            <? } ?>
+                            <?php } ?>
                                  
                                   
                                   
@@ -215,8 +215,8 @@ function confirmAction(PaginaRest){
                                   <td align="right">
                                   
                                   
-                                  <a href="?pg=paginas/<?=$Retorna_ferr['nome_ferramenta']?>/<?=$Retorna_ferr['nome_ferramenta']?>_mudar" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-                                  <a href="index.php?pg=Contrutor/EditarFerramentas&NomeFerr=<?=$Retorna_ferr['nome_ferramenta']?>" oncLick="return confirm('Essa ação apaga por completo a ferramenta <?=$Retorna_ferr['nome_ferramenta']?>, deseja continuar?');" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                                  <a href="?pg=paginas/<?php echo $Retorna_ferr['nome_ferramenta']?>/<?php echo $Retorna_ferr['nome_ferramenta']?>_mudar" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+                                  <a href="index.php?pg=Contrutor/EditarFerramentas&NomeFerr=<?php echo $Retorna_ferr['nome_ferramenta']?>" oncLick="return confirm('Essa ação apaga por completo a ferramenta <?php echo $Retorna_ferr['nome_ferramenta']?>, deseja continuar?');" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
                                      
                                     
                                     </td>
@@ -231,25 +231,25 @@ function confirmAction(PaginaRest){
 								 if(($xLinhasCor++)%2 == 0 ) { $CorLinha = 'class="tdColor"'; }else{ $CorLinha = "";  };
 						
 						?>
-							<tr <?=$CorLinha?>>
-                                    <td>--<?=$Retorna_ferr_SUB['nome_ferramenta']?></td>
+							<tr <?php echo $CorLinha?>>
+                                    <td>--<?php echo $Retorna_ferr_SUB['nome_ferramenta']?></td>
                                     <td align="right">
                                     
-                         <? if ($Retorna_ferr_SUB['status'] == 'ON') { ?>							
-								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?=$Retorna_ferr_SUB['status']?>&pagina=Contrutor/EditarFerramentas&id=<?=$Retorna_ferr_SUB['id']?>" target="_self"><font color="#009900" >Desinstalar</font> | </a>
-                            <? } else { ?>
-								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?=$Retorna_ferr_SUB['status']?>&pagina=Contrutor/EditarFerramentas&id=<?=$Retorna_ferr_SUB['id']?>" target="_self"><font color="#333333">Instalar</font> | </a>
-                            <? } ?>
+                         <?php if ($Retorna_ferr_SUB['status'] == 'ON') { ?>							
+								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?php echo $Retorna_ferr_SUB['status']?>&pagina=Contrutor/EditarFerramentas&id=<?php echo $Retorna_ferr_SUB['id']?>" target="_self"><font color="#009900" >Desinstalar</font> | </a>
+                            <?php } else { ?>
+								<a href="?pg=../Sistema/Includes/status&banco=tbl_paginas&status=<?php echo $Retorna_ferr_SUB['status']?>&pagina=Contrutor/EditarFerramentas&id=<?php echo $Retorna_ferr_SUB['id']?>" target="_self"><font color="#333333">Instalar</font> | </a>
+                            <?php } ?>
                                  
-                                  <a href="#" onclick="confirmAction('<?=$Retorna_ferr_SUB['nome_ferramenta']?>');"><font color="#333333" >Restaurar</font> | </a>
+                                  <a href="#" onclick="confirmAction('<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>');"><font color="#333333" >Restaurar</font> | </a>
                                   
                                   
                                   
-                                  <? if ($Retorna_ferr_SUB['status'] == 'ON') { ?>							
-								  <!--<a href="?pg=paginas/<?=$Retorna_ferr_SUB['nome_ferramenta']?>/<?=$Retorna_ferr_SUB['nome_ferramenta']?>"><font color="#333333" >Ver</font> | </a>-->
-                            <? } else { ?>
+                                  <?php if ($Retorna_ferr_SUB['status'] == 'ON') { ?>							
+								  <!--<a href="?pg=paginas/<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>/<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>"><font color="#333333" >Ver</font> | </a>-->
+                            <?php } else { ?>
 								
-                            <? } ?>
+                            <?php } ?>
                                  
                                   
                                   
@@ -257,8 +257,8 @@ function confirmAction(PaginaRest){
                                   <td align="right">
                                   
                                   
-                                  <a href="?pg=paginas/<?=$Retorna_ferr_SUB['nome_ferramenta']?>/<?=$Retorna_ferr_SUB['nome_ferramenta']?>_mudar" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
-                                  <a href="index.php?pg=Contrutor/EditarFerramentas&NomeFerr=<?=$Retorna_ferr_SUB['nome_ferramenta']?>" oncLick="return confirm('Essa ação apaga por completo a ferramenta <?=$Retorna_ferr_SUB['nome_ferramenta']?>, deseja continuar?');" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
+                                  <a href="?pg=paginas/<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>/<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>_mudar" target="_self"><img src="Arquivos/css/grey/Pencil.png" title="Editar"/></a>
+                                  <a href="index.php?pg=Contrutor/EditarFerramentas&NomeFerr=<?php echo $Retorna_ferr_SUB['nome_ferramenta']?>" oncLick="return confirm('Essa ação apaga por completo a ferramenta <?php echo $Retorna_ferr_SUB['nome_ferramenta']?>, deseja continuar?');" target="_self"><img src="Arquivos/css/grey/delete.png" title="Excluir"/></a>
                                      
                                     
                                     </td>

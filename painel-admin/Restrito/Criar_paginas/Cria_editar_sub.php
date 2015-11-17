@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
@@ -182,14 +182,14 @@ if($cad) {
 $Conteudo_Pagina_Edit .= '
 
 
-Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><?=$Ferramenta_principal?></a> > <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><?=$Titulo_banco?></a>  > editar
+Ferramentas > <a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><?php echo $Ferramenta_principal?></a> > <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><?php echo $Titulo_banco?></a>  > editar
 		
 <div class="Box box_Paginas">
 
 
 <ul class="Menu-acoes">
-                <a href="?pg=paginas/<?=$Titulo_banco?>/<?=$Titulo_banco?>&Id_Princ=<?=$_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?=$Titulo_banco?></li></a>
-          		<a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?=$Ferramenta_principal?></li></a>
+                <a href="?pg=paginas/<?php echo $Titulo_banco?>/<?php echo $Titulo_banco?>&Id_Princ=<?php echo $_GET[\'Id_Princ\']?>"><li style="background-color:#e67700"><?php echo $Titulo_banco?></li></a>
+          		<a href="?pg=paginas/<?php echo $Ferramenta_principal?>/<?php echo $Ferramenta_principal?>"><li style="background-color:#09C">Voltar para <?php echo $Ferramenta_principal?></li></a>
 				
 				
                 <a href="#"  onclick="window.location.reload()"><li>Atualizar</li></a>         
@@ -203,7 +203,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 
 	
             	
-                     <form action="index.php?pg=paginas/<?=$Nome_Pagina_Principal?>/<?=$Nome_Pagina?>&edit=ok&id=<?=$_GET[\'id\']?>&Id_Princ=<?=$id_Principal?>" class="mws-form" method="post" enctype="multipart/form-data">
+                     <form action="index.php?pg=paginas/<?php echo $Nome_Pagina_Principal?>/<?php echo $Nome_Pagina?>&edit=ok&id=<?php echo $_GET[\'id\']?>&Id_Princ=<?php echo $id_Principal?>" class="mws-form" method="post" enctype="multipart/form-data">
 					 
 					 <?php $Sql_Rec = mysql_query("SELECT * FROM ".$Nome_Banco." WHERE '.$Campo_Referencial.' = \'".$_GET[\'id\']."\'")or(die(mysql_error())); $retorna = mysql_fetch_array($Sql_Rec); 
 					 
@@ -232,7 +232,7 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 '; ?>
 
                        
-                        <? 
+                        <?php 
 						
 						 $Conteudo_Pagina_Edit .= false;
 						 $Mascaras_Criadas_editar .= false;
@@ -285,21 +285,21 @@ Ferramentas > <a href="?pg=paginas/<?=$Ferramenta_principal?>/<?=$Ferramenta_pri
 										elseif($Matriz['Tamanho'][$x] > 200) { $Tamanha_campo = 'large'; } 
 								 else { $Tamanha_campo = 'small'; };
 								 
-								  if(strtolower($Matriz['Tipo'][$x]) == 'text') { $Tipo_Input = '<textarea rows="10" style="width: 100%;" name="'.strtolower($Matriz['Campo'][$x]).'" id="'.strtolower($Matriz['Campo'][$x]).'" ><?=$retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?></textarea>'; } 
+								  if(strtolower($Matriz['Tipo'][$x]) == 'text') { $Tipo_Input = '<textarea rows="10" style="width: 100%;" name="'.strtolower($Matriz['Campo'][$x]).'" id="'.strtolower($Matriz['Campo'][$x]).'" ><?php echo $retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?></textarea>'; } 
 												 
 														else { 
 														
 														if(strtolower($Matriz['Tipo'][$x]) == 'date') {  
 														
-														$Masc_Value = '<?=substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4);?>';}
+														$Masc_Value = '<?php echo substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4);?>';}
 														
 														elseif(strtolower($Matriz['Tipo'][$x]) == 'datetime'){ 
 														
-														$Masc_Value = '<?=substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4).\' \'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],10,9);?>';}
+														$Masc_Value = '<?php echo substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],8,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],5,2).\'/\'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],0,4).\' \'.substr($retorna[\''.strtolower($Matriz['Campo'][$x]).'\'],10,9);?>';}
 														
 														else{
 														
-														$Masc_Value = '<?=$retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?>';}
+														$Masc_Value = '<?php echo $retorna[\''.strtolower($Matriz['Campo'][$x]).'\']?>';}
 														
 														
 														

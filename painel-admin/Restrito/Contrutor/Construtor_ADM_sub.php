@@ -1,7 +1,7 @@
 ﻿
          
            
-<? 
+<?php 
 
 if(isset($_SESSION['idLogin']) and isset($_SESSION['UserLogin']) and isset($_SESSION['NivelLogin'])) {
 	
@@ -32,7 +32,7 @@ if(empty($_GET['PR'])) {
                 Dados da Sub-ferramenta
             </div>
             <div class="Body_box">
-            <? 
+            <?php 
 			
 				$SqlContSub = mysql_query("SELECT * FROM tbl_paginas")or(die(mysql_error())); 
 				$contSub = mysql_num_rows($SqlContSub); 
@@ -70,16 +70,16 @@ if(empty($_GET['PR'])) {
                  <div id="mostra_verificacao"><input type="button" disabled="disabled" value="Avançar próxima etapa" class="Bt-gray" /><input type="button" value="Verificar nome" class="Bt-blue" /></div>
                  </form>
                  
-             <? } ?>
+             <?php } ?>
             </div>
          </div>
     
          
            
-<? } ?> 
+<?php } ?> 
          
          
- <? 
+ <?php 
  
  if(isset($_GET['PR'])) { 
  
@@ -112,13 +112,13 @@ if(empty($_GET['PR'])) {
           
            <form action="?pg=Contrutor/Cria_tabelas_sub" method="post" name="cadastro"  enctype="multipart/form-data">
 
-           <input name="Nome_tabela" id="Nome_tabela" value="<?=strtolower($_POST['Nome_tabela'])?>" type="hidden" />
-           <input name="sub_ferramenta" id="sub_ferramenta" value="<?=$_POST['sub_ferramenta']?>" type="hidden" />
-           <input name="galeria" id="galeria" value="<?=$_POST['galeria']?>" type="hidden" />
-           <input name="upload" id="upload" value="<?=$_POST['upload']?>" type="hidden" />
-           <input name="sistema_comente" id="sistema_comente" value="<?=$_POST['sistema_comente']?>" type="hidden" />
-           <input name="categorias" id="categorias" value="<?=$_POST['categorias']?>" type="hidden" />
-           <input name="post_destaque" id="post_destaque" value="<?=$_POST['post_destaque']?>" type="hidden" />
+           <input name="Nome_tabela" id="Nome_tabela" value="<?php echo strtolower($_POST['Nome_tabela'])?>" type="hidden" />
+           <input name="sub_ferramenta" id="sub_ferramenta" value="<?php echo $_POST['sub_ferramenta']?>" type="hidden" />
+           <input name="galeria" id="galeria" value="<?php echo $_POST['galeria']?>" type="hidden" />
+           <input name="upload" id="upload" value="<?php echo $_POST['upload']?>" type="hidden" />
+           <input name="sistema_comente" id="sistema_comente" value="<?php echo $_POST['sistema_comente']?>" type="hidden" />
+           <input name="categorias" id="categorias" value="<?php echo $_POST['categorias']?>" type="hidden" />
+           <input name="post_destaque" id="post_destaque" value="<?php echo $_POST['post_destaque']?>" type="hidden" />
            
            <input name="validar" id="validar" value="EXE" type="hidden" />
            <input name="quantidade" id="quantidade" value="1" type="hidden" />
@@ -181,7 +181,7 @@ if(empty($_GET['PR'])) {
 </div>
             
             
- <? } ?>         
+ <?php } ?>         
             
            
          
